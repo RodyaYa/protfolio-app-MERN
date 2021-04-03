@@ -1,0 +1,34 @@
+//main : ../index.less
+
+.single_memory {
+  padding: 20px;
+  & .inner {
+    margin: auto;
+  }
+
+  & .post_header {
+  }
+
+  & .content {
+    margin-top: 20px;
+  }
+
+  & .back_button {
+    cursor: pointer;
+    display: inline-flex;
+    padding: 5px 10px;
+    border: 1px @bordCol solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0c0b1632;
+    &:hover {
+      background-color: darken(white, 5);
+      box-shadow: 0 0 1px #0c0b1632;
+      transform: scale(0.99);
+    }
+    &:active {
+      background-color: darken(white, 15);
+      transform: scale(0.97);
+    }
+    transition: 0.1s;
+  }
+}

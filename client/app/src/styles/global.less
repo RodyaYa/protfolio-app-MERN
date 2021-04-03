@@ -1,0 +1,44 @@
+//compress : true
+
+@import "./vars.less";
+
+*,
+*::before,
+*::after {
+  font-family: "Mulish", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: @fontCol;
+}
+
+#root {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: @white;
+}
+
+.flex {
+  display: flex;
+  &-centered {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.container {
+  max-width: 1000px;
+}

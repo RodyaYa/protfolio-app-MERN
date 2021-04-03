@@ -1,0 +1,205 @@
+// main: ../index.less
+
+.auth {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.75, -0.06, 0.24, 0.99);
+
+  & .inner {
+    position: relative;
+    padding: 30px 20px 15px 20px;
+    border-radius: 10px;
+    box-shadow: @boxShadow;
+    border: 1px @bordCol solid;
+    min-width: 300px;
+    background-color: white;
+    & .closeBtn {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      cursor: pointer;
+      background-image: url("../../images/AuthPage/close.svg");
+      background-size: cover;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+    }
+    & .form {
+      flex-direction: column;
+
+      & .inputs {
+        flex-direction: column;
+        & .wrapper {
+          position: relative;
+          width: 100%;
+          margin-top: 10px;
+          & .togglePassword {
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+            top: calc(50% - 12.5px);
+            width: 25px;
+            height: 25px;
+            background-image: url("../../images/AuthPage/showBtn.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            &.active {
+              background-image: url("../../images/AuthPage/showBtn-disabled.svg");
+            }
+          }
+        }
+        & input {
+          width: 100%;
+          border-radius: 5px;
+          border: 2px @bordCol solid;
+          padding: 5px 5px;
+          font-size: 1.3rem;
+          &::placeholder {
+            opacity: 0.5;
+          }
+          &:first-child {
+            margin-top: 0;
+          }
+          &:focus {
+            outline: none;
+          }
+          &.error {
+            border: 2px lighten(@errorCol, 10) solid;
+          }
+        }
+      }
+
+      & .buttons {
+        width: 100%;
+        margin-top: 20px;
+        flex-direction: column;
+
+        & .login {
+          cursor: pointer;
+          text-align: center;
+          width: 100%;
+          padding: 10px 30px;
+          border-radius: 5px;
+          background-color: @acceptCol;
+          color: lighten(@acceptCol, 80);
+          font-weight: bold;
+          &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+          }
+          &:hover {
+            background-color: darken(@acceptCol, 5);
+          }
+          &:active {
+            background-color: darken(@acceptCol, 15);
+          }
+          transition: 0.3s;
+        }
+        & .create {
+          cursor: pointer;
+          padding: 8px 20px;
+          border-radius: 5px;
+          border: 2px @warningCol solid;
+          font-weight: bold;
+          color: @warningCol;
+          &:hover {
+            background-color: lighten(@warningCol, 45);
+          }
+          transition: 0.3s;
+        }
+        & .register {
+          cursor: pointer;
+          font-weight: bold;
+          padding: 10px 30px;
+          border-radius: 5px;
+          background-color: @warningCol;
+          color: lighten(@warningCol, 80);
+          &:hover {
+            background-color: darken(@warningCol, 5);
+          }
+          &:active {
+            background-color: darken(@warningCol, 15);
+          }
+          &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+          }
+          transition: 0.3s;
+        }
+      }
+
+      & .forgot_password {
+        margin-top: 10px;
+        a {
+          color: @linkCol;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      & .sepparator {
+        width: 100%;
+        height: 1px;
+        background-color: @bordCol;
+        margin: 15px 0;
+      }
+    }
+  }
+
+  & .errors {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+    & .item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin: 3px 0;
+      font-weight: bold;
+      color: lighten(@errorCol, 20);
+      padding-left: 30px;
+      &:before {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("../../images/AuthPage/warning.svg");
+        background-size: contain;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  pointer-events: none;
+  opacity: 0;
+  &.opened {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  transition: 0.3s;
+}

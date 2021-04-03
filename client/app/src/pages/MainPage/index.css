@@ -1,0 +1,10 @@
+.main_page {
+  margin: 10px;
+}
+.test_field {
+  border-radius: 15px;
+  border: 2px #b3b3b373 solid;
+}
+.test_field .inner {
+  padding: 20px;
+}

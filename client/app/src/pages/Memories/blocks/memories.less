@@ -1,0 +1,216 @@
+//main : ../index.less
+
+@memorySpace: 10px;
+
+.memories {
+  padding: 20px;
+  & .inner {
+    max-width: 1000px;
+    margin: auto;
+    & .title {
+    }
+  }
+
+  & .total {
+    margin: 0px 10px;
+    margin-top: 25px;
+    font-weight: bold;
+  }
+
+  & .search_by_tags {
+    margin: 10px 10px;
+    & span {
+      margin-right: 10px;
+      font-weight: bold;
+      color: #10778a;
+    }
+    & .tags {
+      display: flex;
+      align-items: center;
+      & .item {
+        padding: 5px 10px;
+        border: 1px @bordCol solid;
+        cursor: pointer;
+        &:hover {
+          background-color: #831b1bd7;
+          color: white;
+        }
+        transition: 0.1s;
+      }
+    }
+  }
+
+  & .head {
+    display: flex;
+    justify-content: space-betwen;
+    margin: 0 10px;
+    & .left {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    & .right {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    & .input_container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      & input {
+        border: 1px @bordCol solid;
+        border-radius: 5px;
+        padding: 5px 10px;
+      }
+      & .results {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 100%;
+        border: 1px @bordCol solid;
+        border-radius: 5px;
+        padding: 10px;
+        & .item {
+          margin-top: 10px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    & .create_btn {
+      padding: 9px 30px;
+      border-radius: 5px;
+      background-color: white;
+      border: 1px solid @bordCol;
+      color: black;
+      font-weight: bold;
+      &:hover {
+        background-color: darken(white, 10);
+      }
+      &:active {
+        background-color: darken(white, 30);
+      }
+      transition: 0.3s;
+    }
+  }
+
+  & .container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    & .box {
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: -10px;
+    }
+
+    & .item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin: 10px;
+      flex-basis: calc(33.333333% - 20px);
+      min-width: calc(33.333333% - 20px);
+      padding: 20px;
+      background-color: white;
+      border: 1px solid @bordCol;
+      border-radius: 5px;
+      box-shadow: @boxShadow;
+      transition: 0.15s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.99);
+        box-shadow: 0 2px 3px #00000086;
+      }
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 1px 1px #00000086;
+      }
+      & .item__header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        & .user_info {
+          & .name {
+            font-weight: bold;
+          }
+        }
+        & .date {
+          font-weight: bold;
+          opacity: 0.3;
+        }
+      }
+
+      & .post_head {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        & .title {
+          margin-top: 5px;
+          font-weight: bold;
+          font-size: 1.2rem;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        & .subtitle {
+          margin-top: 5px;
+          font-weight: bold;
+          opacity: 0.8;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        & .description {
+          margin-top: 3px;
+          opacity: 0.5;
+          &:hover {
+            opacity: 0.3;
+          }
+        }
+      }
+      & .preview_image {
+        margin-top: @memorySpace;
+        width: 100%;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      & .tags {
+        margin-top: @memorySpace;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: start;
+        & .tags_item {
+          cursor: pointer;
+          margin-top: 5px;
+          padding: 3px 15px;
+          margin-right: 5px;
+          border: 1px @bordCol solid;
+          &:last-child {
+            margin-right: 0;
+          }
+          &:hover {
+            background-color: darken(white, 5);
+          }
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+      }
+    }
+  }
+}

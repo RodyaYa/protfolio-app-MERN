@@ -1,0 +1,46 @@
+//main: ../index.less
+
+.header {
+  border-bottom: 1px solid @bordCol;
+  & .inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .logout {
+    cursor: pointer;
+    padding: 20px 20px 20px 40px;
+    font-weight: bold;
+    background-image: url("../../images/header/logout.svg");
+    background-position: 13% 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: @fontCol;
+    &:hover {
+      background-color: #202020;
+      color: @white;
+      background-image: url("../../images/header/logout-hover.svg");
+    }
+    transition: 0.3s;
+  }
+
+  & .nav {
+    display: flex;
+    & .item {
+      cursor: pointer;
+      padding: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      color: @fontCol;
+      &:hover {
+        color: black;
+      }
+      &:active {
+        background-color: darken(white, 10);
+      }
+      &.active {
+        color: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.header {
+  border-bottom: 1px solid #b3b3b373;
+}
+.header .inner {
+  display: flex;
+  justify-content: space-between;
+}
+.header .logout {
+  cursor: pointer;
+  padding: 20px 20px 20px 40px;
+  font-weight: bold;
+  background-image: url("../../images/header/logout.svg");
+  background-position: 13% 50%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  color: #888888;
+  transition: 0.3s;
+}
+.header .logout:hover {
+  background-color: #202020;
+  color: #ffffff;
+  background-image: url("../../images/header/logout-hover.svg");
+}
+.header .nav {
+  display: flex;
+}
+.header .nav .item {
+  cursor: pointer;
+  padding: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: #888888;
+}
+.header .nav .item:hover {
+  color: black;
+}
+.header .nav .item:active {
+  background-color: #e6e6e6;
+}
+.header .nav .item.active {
+  color: black;
+}
