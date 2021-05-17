@@ -61,6 +61,7 @@ function AuthPage() {
       } else if (type === "register") {
         const response = await authService.register(authData);
         response && setAuthResponse(response.data);
+        console.log(response.data);
         setLoading(false);
       }
     } catch (error) {

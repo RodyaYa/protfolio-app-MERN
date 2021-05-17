@@ -34,6 +34,7 @@
         &:hover {
           background-color: #831b1bd7;
           color: white;
+          border: 1px white solid;
         }
         transition: 0.1s;
       }
@@ -60,9 +61,15 @@
       align-items: center;
       position: relative;
       & input {
+        height: 100%;
         border: 1px @bordCol solid;
         border-radius: 5px;
-        padding: 5px 10px;
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 1rem;
+        &::placeholder {
+          opacity: 0.5;
+        }
       }
       & .results {
         position: absolute;

@@ -15,7 +15,6 @@ export const imageService = {
     }
   },
   delete: async (path) => {
-    console.log(path);
     const response = await axios.post(`${API_URL}/image/delete`, { path }, {});
 
     if (response.status === 200) {

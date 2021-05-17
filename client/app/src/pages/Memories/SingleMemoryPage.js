@@ -33,7 +33,7 @@ function SingleMemoryPage() {
               history.goBack();
             }}
           >
-            {"<="}Back to posts
+            Back to posts
           </div>
         </div>
         <div className="content">

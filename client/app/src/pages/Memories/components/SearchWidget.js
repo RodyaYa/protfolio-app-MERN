@@ -51,6 +51,7 @@ function SearchWidget() {
       <input
         type="text"
         name="query"
+        placeholder="Поиск по названию"
         onChange={(e) => {
           searchInputHadler(e);
         }}
