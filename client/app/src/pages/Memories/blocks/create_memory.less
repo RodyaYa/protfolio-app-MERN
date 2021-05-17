@@ -3,6 +3,7 @@
 .create_page {
   & .inner {
     margin: auto;
+    padding: 5px 10px;
 
     & .post_head {
       max-width: 650px;
@@ -81,6 +82,20 @@
         border-radius: 5px;
         border: 1px solid @bordCol;
         box-shadow: 0 3px 5px #e4e4e4;
+        &.back {
+          padding: 5px 10px 5px 25px;
+          &:before {
+            position: absolute;
+            left: 6px;
+            display: block;
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-image: url("../../images/MemoriesPage/undo.svg");
+            background-position: 0 0;
+            background-size: cover;
+          }
+        }
         &.uploaded {
           &:after {
             pointer-events: none;

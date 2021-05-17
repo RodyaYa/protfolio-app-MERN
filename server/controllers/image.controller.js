@@ -45,6 +45,7 @@ module.exports = {
 
   deleteImage: async (req, res, next) => {
     const { path: clearPath } = req.body;
+    console.log(clearPath);
 
     try {
       const photoPath = path.normalize(process.cwd() + "/uploads/" + clearPath);

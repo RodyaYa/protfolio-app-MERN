@@ -45,6 +45,10 @@ function CreateMemory() {
       console.log(parsed);
       setMemoryData(parsed);
     }
+
+    if (!!previewImage.url) {
+      setImageUploaded(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -125,18 +129,35 @@ function CreateMemory() {
     history.push("/memories");
   }
 
+  async function deleteImageHandler(e) {
+    if (imageUploaded) {
+      e.preventDefault();
+      if (memoryData?.previewImage?.url) {
+        const response = await imageService.delete(
+          memoryData?.previewImage?.url
+        );
+        console.log(response);
+        if (response.removeElem || response.ok) {
+          memoryData.previewImage = { url: "", path: "" };
+          localStorage.removeItem(PREV_IMG_LOCAL_STORAGE_NAME);
+          setImageUploaded(false);
+        }
+      }
+    }
+  }
+
   return (
     <div className="create_page">
       <div className="inner limiting-container">
         <div className="head">
           <div className="left">
             <div
-              className="button"
+              className="button back"
               onClick={() => {
                 history.goBack();
               }}
             >
-              {"<"} Back{" "}
+              Back
             </div>
           </div>
           <div className="right">
@@ -160,9 +181,12 @@ function CreateMemory() {
                     : { display: "none" }
                 }
               ></div>
-              Upload image
+              <span>{imageUploaded ? "Delete image" : "Upload image"}</span>
             </label>
             <input
+              onClick={(e) => {
+                deleteImageHandler(e);
+              }}
               onChange={(e) => {
                 uploadPreviewImageHandler(e);
               }}
